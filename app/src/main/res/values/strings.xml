@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ATM</string>
+    <string name="title_activity_finance">FinanceActivity</string>
+</resources>
