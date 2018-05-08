@@ -136,6 +136,10 @@ public class LoginActivity extends AppCompatActivity {
                 EditText edPW = (EditText) findViewById(R.id.PW);
                 String ID = edID.getText().toString();
                 String PW = edPW.getText().toString();
+                setting = getSharedPreferences("ATM",MODE_PRIVATE); //記住登入帳號
+                setting.edit() //呼叫.edit()取得編輯物件
+                        .putString("Pref_Userid",ID)  //資料為 Sting ID , 標籤為 Pref_Userid
+                        .apply(); //commit()會直接執行 , apply()會盡快執行
                 getIntent().putExtra("LOGIN_USERID", ID);
                 getIntent().putExtra("LOGIN_PASSWORD",PW);
                 setResult(RESULT_OK , getIntent());
